@@ -18,7 +18,7 @@ docker run \
   --restart always \
   --cap-add NET_ADMIN \
   --volume /dev/net/tun:/dev/net/tun \
-  --volume /path/to/config:/etc/wireguard/wg0.conf \
+  --volume /path/to/config:/config/wg0.conf \
   --publish 51820:51820/udp \
   ldobbelsteen/wireguard
 ```
@@ -28,5 +28,5 @@ docker run \
 * `--restart always` - Restart the container if it crashes and allow it to restart after a machine reboot.
 * `--cap-add NET_ADMIN` - Give container networking privileges.
 * `--volume /dev/net/tun:/dev/net/tun` - Give container tun driver access.
-* `--volume /path/to/config:/etc/wireguard/wg0.conf` - Standard Wireguard configuration file. You can specify multiple ones and with any name (not just `wg0`).
-* `--publish 51820:51820/udp` - Open the port on the container. This is the default port for Wireguard, but any port can be chosen.
+* `--volume /path/to/config:/config/wg0.conf` - Standard Wireguard configuration file. Only a single config file is supported.
+* `--publish 51820:51820/udp` - Open the port on the container. You should set this to be the same port as in the config file.

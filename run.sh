@@ -1,17 +1,13 @@
 #!/bin/bash
 
-configs=$(find /etc/wireguard -type f)
-
-shutdown () {
-  for config in $configs; do
-    wg-quick down $config
-  done
-}
+config_file="/config/wg0.conf"
 
 startup () {
-  for config in $configs; do
-    wg-quick up $config
-  done
+  wg-quick up $config_file
+}
+
+shutdown () {
+  wg-quick down $config_file
 }
 
 startup
