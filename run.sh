@@ -1,4 +1,5 @@
 #!/bin/bash
+
 config_file="/config/wireguard.conf"
 
 open () {
@@ -13,7 +14,4 @@ close
 open
 trap close SIGTERM SIGINT SIGQUIT
 
-while :
-do
-  sleep 2
-done
+while true; do :; done
