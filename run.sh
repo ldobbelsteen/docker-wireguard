@@ -12,4 +12,8 @@ close () {
 close
 open
 trap close SIGTERM SIGINT SIGQUIT
-sleep infinity
+
+while :
+do
+  sleep 2
+done
