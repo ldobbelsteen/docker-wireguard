@@ -11,10 +11,10 @@ docker build --tag wireguard https://github.com/ldobbelsteen/docker-wireguard.gi
 Wireguard tools are available in the image, so you can generate keys if you don't have them already using the following commands.
 ```
 # Generate private key
-docker run --rm -i wireguard wg genkey > privatekey
+docker run --rm wireguard wg genkey > private_key
 
 # Derive public key from the private key
-docker run --rm -i wireguard wg genkey < privatekey > publickey
+docker run --rm wireguard wg pubkey < private_key > public_key
 ```
 
 ## Usage
