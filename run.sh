@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 config_file="/config/wireguard.conf"
 
@@ -12,6 +12,7 @@ close () {
 
 close
 open
+
 trap close SIGTERM SIGINT SIGQUIT
 
 while true; do :; done
