@@ -1,5 +1,5 @@
-# Docker Wireguard
-Dockerized Wireguard setup intended for personal VPN use. A Wireguard-ready kernel on the host is required (Linux version 5.6 and up or a patched one).
+# Docker WireGuard
+Dockerized WireGuard setup intended for personal VPN use. A WireGuard-ready kernel on the host is required (Linux version 5.6 and up or a patched one).
 
 ## Building
 There is a Dockerfile present in this repo to build an image. This can be done using the following command.
@@ -8,7 +8,7 @@ docker build --tag wireguard https://github.com/ldobbelsteen/docker-wireguard.gi
 ```
 
 ## Key generation
-Wireguard tools are available in the image, so you can generate keys if you don't have them already using the following command.
+WireGuard tools are available in the image, so you can generate keys if you don't have them already using the following command.
 ```
 docker run --rm wireguard wg genkey | tee private_key | wg pubkey > public_key
 ```
@@ -32,7 +32,7 @@ docker run \
 * `--restart always` - Restart the container if it crashes and allow it to restart after a machine reboot.
 * `--cap-add NET_ADMIN` - Give container networking privileges.
 * `--volume /dev/net/tun:/dev/net/tun` - Give container tun driver access.
-* `--volume /path/to/config:/config/wg0.conf` - Standard Wireguard configuration file. Only a single config file is supported.
+* `--volume /path/to/config:/config/wg0.conf` - Standard WireGuard configuration file. Only a single config file is supported.
 * `--publish 51820:51820/udp` - Open the port on the container. You should set this to be the same port as in the config file.
 
 ## Configuration
