@@ -1,6 +1,5 @@
 #!/bin/bash
-
-config_file="/config/wg0.conf"
+config_file="/config/wireguard.conf"
 
 open () {
   wg-quick up $config_file

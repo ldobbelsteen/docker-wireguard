@@ -24,7 +24,7 @@ docker run \
   --restart always \
   --cap-add NET_ADMIN \
   --volume /dev/net/tun:/dev/net/tun \
-  --volume /path/to/config:/config/wg0.conf \
+  --volume /path/to/config:/config/wireguard.conf \
   --publish 51820:51820/udp \
   wireguard
 ```
