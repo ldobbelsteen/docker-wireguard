@@ -2,14 +2,15 @@
 
 config_file="/config/wg0.conf"
 
-startup () {
+open () {
   wg-quick up $config_file
 }
 
-shutdown () {
+close () {
   wg-quick down $config_file
 }
 
-startup
-trap shutdown SIGTERM SIGINT SIGQUIT
+close
+open
+trap close SIGTERM SIGINT SIGQUIT
 sleep infinity
