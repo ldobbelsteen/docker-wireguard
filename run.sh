@@ -12,7 +12,4 @@ close () {
 
 close
 open
-
-trap close SIGTERM SIGINT SIGQUIT
-
-while true; do :; done
+sleep infinity
