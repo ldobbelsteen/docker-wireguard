@@ -8,14 +8,11 @@ docker build --tag wireguard https://github.com/ldobbelsteen/docker-wireguard.gi
 ```
 
 ## Key generation
-Wireguard tools are available in the image, so you can generate keys if you don't have them already using the following commands.
+Wireguard tools are available in the image, so you can generate keys if you don't have them already using the following command.
 ```
-# Generate private key
-docker run --rm wireguard wg genkey > private_key
-
-# Derive public key from the private key
-docker run --rm wireguard wg pubkey < private_key > public_key
+docker run --rm wireguard wg genkey | tee private_key | wg pubkey > public_key
 ```
+The private key will be in the `private_key` file and the public key will be in the `public_key` file.
 
 ## Usage
 The image can be run through docker-compose or directly. An example command can be found below.
